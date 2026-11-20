@@ -1,0 +1,55 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+% Marca visible para lo que falta. Antes de entregar no debe quedar ninguna:
+% buscar "Pendiente" en el PDF y en estos archivos.
+\newcommand{\pend}[1]{\textcolor{red}{[Pendiente: #1]}}
+
+\title{Técnicas de elicitación y herramientas automatizadas de apoyo a la IR}
+\subtitle{GA-SUM-02 -- EXP-1 \;|\; Ingeniería de Requerimientos (ISR-401)}
+\author{\pend{integrantes del equipo, solo quienes trabajaron}}
+\institute{Universidad Técnica Estatal de Quevedo -- Carrera de Software}
+\date{\pend{fecha de la exposición}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% ============ BLOQUE A (Basurto): técnicas de elicitación ============
+% Cada integrante edita solo su archivo. Los bloques se incluyen con \input.
+\input{bloqueA}
+
+% ============ BLOQUE B: herramientas automatizadas ============
+\input{bloqueB}
+
+% ============ BLOQUES C y D: recomendación y demostración ============
+\input{bloqueCD}
+
+% ============ DECLARACIÓN DE USO DE IA ============
+\begin{frame}{Declaración de uso de herramientas de IA}
+  % Obligatoria. Si no se usó ninguna, escribirlo así.
+  \pend{herramienta, versión, propósito y cómo se verificó lo obtenido; o <<No se usó ninguna herramienta de IA>>}
+\end{frame}
+
+% ============ REFERENCIAS (IEEE, última diapositiva) ============
+\begin{frame}[allowframebreaks]{Referencias}
+  \footnotesize
+  \nocite{pohl2025}  % borrar cuando haya citas reales
+  \bibliographystyle{IEEEtran}
+  \bibliography{referencias}
+\end{frame}
+
+\end{document}
