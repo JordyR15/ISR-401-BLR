@@ -2,9 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
-\usepackage{tikz}
+\usepackage{graphicx}
 \usepackage{booktabs}
-\usetikzlibrary{arrows.meta, positioning}
+\usepackage{url}
 
 \usetheme{Madrid}
 \usecolortheme{seahorse}
@@ -23,15 +23,15 @@
 \begin{frame}{Helix ALM: Evaluaci\'on de Adopci\'on}
   \begin{block}{Uso en Equipos \'Agiles}
     \begin{itemize}
-      \item No conviene imponer Helix ALM como eje diario cuando se busca iteraci\'on r\'apida y baja carga administrativa \cite{pohl2015requirements}.
-      \item Implica costo de licenciamiento, curva de aprendizaje y mantenimiento de flujos y enlaces \cite{pohl2015requirements}.
+      \item No conviene imponer Helix ALM como eje diario cuando se busca iteraci\'on r\'apida y baja carga administrativa \cite{perforce2026web}.
+      \item Implica costo de licenciamiento, curva de aprendizaje y mantenimiento de flujos y enlaces \cite{perforce2026web}.
       \item En entornos livianos resulta preferible un flujo \'agil directo con \textbf{Git + Markdown + Issues}.
     \end{itemize}
   \end{block}
   \vspace{0.2cm}
   \begin{alertblock}{Entornos Cr\'iticos o Regulados}
     \begin{itemize}
-      \item Resulta adecuado cuando se exigen auditor\'ias formales, cumplimiento normativo o trazabilidad estricta \cite{pohl2015requirements}.
+      \item Resulta adecuado cuando se exigen auditor\'ias formales, cumplimiento normativo o trazabilidad estricta \cite{perforce2026web}.
     \end{itemize}
   \end{alertblock}
 \end{frame}
@@ -50,64 +50,50 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{Cu\'ando Aplicarlo}
         \begin{itemize}
-          \item Gesti\'on centralizada de requisitos, casos de prueba e incidencias \cite{pohl2015requirements}.
-          \item Trazabilidad bidireccional auditable entre artefactos \cite{pohl2015requirements}.
-          \item An\'alisis de impacto ante modificaciones \cite{pohl2015requirements}.
+          \item Gesti\'on centralizada de requisitos, casos de prueba e incidencias \cite{perforce2026web}.
+          \item Trazabilidad bidireccional auditable entre artefactos \cite{perforce2026web}.
+          \item An\'alisis de impacto ante modificaciones \cite{perforce2026web}.
         \end{itemize}
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Helix ALM: Trazabilidad de \'Items}
-  \begin{center}
-    \begin{tikzpicture}[
-      node distance=1.4cm,
-      box/.style={rectangle, draw=blue!60!black, fill=blue!8, thick, rounded corners, minimum width=3.4cm, minimum height=1.5cm, align=center, font=\small},
-      arrow/.style={-{Stealth[length=3mm]}, thick, blue!70!black}
-    ]
-      \node[box] (req) {\textbf{Requisito (REQ-01)}\\Especificaci\'on de regla\\o condici\'on funcional\\del sistema};
-      \node[box, right=of req] (tc) {\textbf{Caso de Prueba (TC-01)}\\Verificaci\'on del\\comportamiento y\\criterios de salida};
-      \node[box, right=of tc] (inc) {\textbf{Incidencia (INC-01)}\\Registro de defecto o\\desviaci\'on detectada\\en ejecuci\'on};
-
-      \draw[arrow] (req) -- node[above, font=\scriptsize] {Verifica} (tc);
-      \draw[arrow] (tc) -- node[above, font=\scriptsize] {Genera} (inc);
-      \draw[arrow, dashed, red!70!black] (inc.south) to[bend left=22] node[below, font=\scriptsize] {Impacta / Revisi\'on} (req.south);
-    \end{tikzpicture}
-  \end{center}
-
-  \vspace{0.2cm}
-  \begin{itemize}
-    \item Enlaza requisitos, casos de prueba e incidencias dentro de un mismo repositorio de gesti\'on \cite{pohl2015requirements}.
-  \end{itemize}
+\begin{frame}{Helix ALM: Gesti\'on de Requisitos y \'Items}
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{evidencias/imagen02}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \begin{itemize}
+        \item Centraliza requisitos, casos de prueba, ejecuciones e incidencias en un mismo repositorio \cite{perforce2026web}.
+        \item Permite filtrar por tipo, producto y estado del flujo de trabajo \cite{perforce2026web}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Helix ALM: Matriz de Impacto}
-  \begin{table}
-    \centering
-    \small
-    \begin{tabular}{llll}
-      \toprule
-      \textbf{Artefacto} & \textbf{ID} & \textbf{Estado Anterior} & \textbf{Acci\'on por Alerta de Impacto} \\
-      \midrule
-      Requisito & REQ-01 & Aprobado (v1.0) & Actualizado a v1.1 (nuevo criterio) \\
-      Caso de Prueba & TC-01 & Aprobado & Marcado como \textit{Sospechoso} (re-ejecutar) \\
-      Incidencia & INC-01 & En revisi\'on & Reevaluar causa y alcance del cambio \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
-
-  \vspace{0.2cm}
-  \begin{block}{Propagaci\'on de Cambios}
-    Helix ALM marca como \textit{sospechosos} los \'items vinculados cuando se modifica un elemento relacionado \cite{pohl2015requirements}.
-  \end{block}
+\begin{frame}{Helix ALM: Trazabilidad e Impacto (\textit{Suspect})}
+  \begin{columns}[c]
+    \begin{column}{0.58\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{evidencias/imagen03}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \begin{itemize}
+        \item Resalta elementos marcados como \textit{sospechosos} (\textit{Suspect Requirements} / \textit{Suspect Test Cases}) ante cambios \cite{perforce2026web}.
+        \item Facilita revisar casos de prueba e incidencias afectadas antes de liberar \cite{perforce2026web}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Helix ALM: Conclusiones}
   \begin{block}{S\'intesis}
     \begin{itemize}
-      \item Helix ALM aporta trazabilidad formal y control de impacto sobre requisitos, pruebas e incidencias \cite{pohl2015requirements}.
-      \item Su adopci\'on debe evaluarse frente al costo operativo y al nivel de formalidad exigido \cite{pohl2015requirements}.
+      \item Helix ALM aporta trazabilidad formal y control de impacto sobre requisitos, pruebas e incidencias \cite{perforce2026web}.
+      \item Su adopci\'on debe evaluarse frente al costo operativo y al nivel de formalidad exigido \cite{perforce2026web}.
     \end{itemize}
   \end{block}
 \end{frame}
