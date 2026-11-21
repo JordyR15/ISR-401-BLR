@@ -1,4 +1,31 @@
-% BLOQUE B -- Comparación de herramientas (responsable: \pend{integrante}).
-\begin{frame}{\pend{Bloque B}}
-  \pend{contenido de ese integrante}
+% BLOQUE B -- Comparación de herramientas (responsable: Lavayen).
+% Datos de la tabla tomados de las páginas oficiales citadas.
+% Evidencia propia: Issues #1 (RF-01) y #2 (TC-01) del repositorio del equipo.
+\begin{frame}{Herramienta pesada frente a ligera: Helix ALM y GitHub Issues}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \scriptsize
+      \renewcommand{\arraystretch}{1.15}
+      \begin{tabular}{@{}p{1.5cm}p{2.6cm}p{2.6cm}@{}}
+        \toprule
+         & \textbf{Helix ALM}\newline{\tiny(hoy Perforce ALM)} & \textbf{GitHub Issues} \\
+        \midrule
+        Enfoque & Módulos de requisitos, pruebas e incidencias \cite{perforcealm2026} & Seguimiento de tareas, ideas y errores en el repositorio \cite{githubissues2026} \\
+        Trazabilidad & Matriz de trazabilidad automática \cite{perforcealm2026} & Referencias por mención (\#n), sub-issues y dependencias \cite{githubissues2026} \\
+        Costo & Precio no publicado; prueba de 30 días \cite{perforcealm2026} & Sin costo en nuestro repositorio público (uso propio) \\
+        No conviene si\ldots & El equipo tiene presupuesto limitado y plazos de entrega reducidos, ya que es costoso y complejo de usar & El proyecto exige documentación extensa y trazabilidad formal para auditorías \\
+        \bottomrule
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{figuras/issues-rf01-recorte.png}
+
+      \vspace{2pt}
+      {\scriptsize Ejemplo propio: RF-01 (\#1) enlazado con su prueba TC-01 (\#2).}
+    \end{column}
+  \end{columns}
+
+  \vspace{4pt}
+  \footnotesize\textbf{Conclusión:} para nuestro proyecto de fin de curso conviene GitHub Issues, ya que es el más óptimo para nosotros como estudiantes de la carrera.
 \end{frame}
