@@ -1,5 +1,10 @@
-% BLOQUE A -- Técnicas de elicitación (Basurto). Parte 1: introducción y entrevista.
-% Contenido propio.
+% BLOQUE A -- Técnicas de elicitación (Basurto). Versión resumida.
+% Contenido propio. Citas IEEE.
+
+\tikzset{
+  paso/.style={draw, rounded corners=2pt, align=center, text width=2.1cm, minimum height=1.3cm, font=\scriptsize, inner sep=3pt},
+  flecha/.style={-{Stealth[length=2mm]}, thick}
+}
 
 % ---------- Diapositiva 1 ----------
 \begin{frame}{Por qué importa elicitar}
@@ -68,4 +73,54 @@
       \end{itemize}
     \end{column}
   \end{columns}
+\end{frame}
+
+% ---------- Taller y prototipado ----------
+\begin{frame}{Taller y prototipado}
+  \small
+  \centering
+  \includegraphics[width=\textwidth]{figuras/flujo-taller-prototipado.jpg}
+
+  \raggedright
+  \vspace{10pt}
+  \textbf{Taller:} sesión facilitada donde stakeholders y analistas exploran necesidades juntos \cite[Sec.~19.3, pp.~256--266]{pohl2025}
+  \begin{itemize}
+    \item \textbf{Ventaja:} el grupo contrasta ideas y acuerda en el mismo lugar.
+    \item \textbf{Limitación:} con demasiada gente se vuelve lento \cite[Cap.~7, pp.~122--124]{wiegers2013}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Prototipado (técnica creativa)}
+  \small
+  Mostrar el sistema antes de construirlo para que reaccionen.
+  \begin{itemize}
+    \item \textbf{Niveles:} wireframe (baja fidelidad), mock-up (media), nativo (alta) \cite[p.~30]{ireb2026}.
+    \item \textbf{Ventaja:} sirve cuando nadie quiere leer documentos y puede destapar delighters.
+    \item \textbf{Limitación:} un prototipo caro, o confundido con el producto final, distrae del requisito \cite[Sec.~20.2, pp.~300--304]{pohl2025}
+  \end{itemize}
+\end{frame}
+
+% ---------- Comparación ----------
+\begin{frame}{Comparación y cuándo no usarlas}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{@{}p{2.1cm}p{3.4cm}p{3.6cm}p{3.4cm}@{}}
+    \toprule
+     & \textbf{Entrevista} & \textbf{Taller} & \textbf{Prototipado} \\
+    \midrule
+    Personas & una o pocas & grupo reducido, con facilitador & pocas, que reaccionen \\
+    Conocimiento & consciente, algo de subconsciente & consciente y subconsciente & inconsciente \\
+    Costo y tiempo & bajo & medio: reunir a todos & según el nivel \\
+    Riesgo & preguntas que inducen & grupo disperso o dominado & confundirlo con el producto \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{2pt}
+  \textbf{Cuándo no usarlas:}
+  \begin{itemize}
+    \item \textbf{Entrevista:} conocimiento tácito que el entrevistado no sabe expresar.
+    \item \textbf{Taller:} no se puede reunir a quienes deciden, o el grupo es inmanejable.
+    \item \textbf{Prototipado:} no hay objetivo claro; no se sabe qué validar.
+  \end{itemize}
+  \textbf{Para cerrar:} no hay técnica universal; se elige según el contexto y suele convenir combinar varias \cite[p.~35]{ireb2026}.
 \end{frame}
