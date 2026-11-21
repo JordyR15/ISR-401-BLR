@@ -1,3 +1,11 @@
+## Integrantes
+
+| Integrante | Rol / Responsabilidad | Usuario de GitHub |
+| :--- | :--- | :--- |
+| **Jordan Steven Basurto Anchaguano** | Bloque A: técnicas de elicitación (entrevista, taller y prototipado) | [@EleSteven777](https://github.com/EleSteven777) |
+| **Cristopher Javier Lavayen Bone** | Bloque B: comparación Helix ALM y GitHub Issues; integración de bloques y README | [@clavayenb-2026](https://github.com/clavayenb-2026) |
+| **Jordy Fabián Rivas Bodero** | Bloques C y D: recomendación para el PFC y Helix ALM | [@JordyR15](https://github.com/JordyR15) |
+
 ## Cómo compilar GA-SUM-02
 
 Diapositivas de la exposición sobre técnicas de elicitación y herramientas automatizadas de apoyo a la IR.
