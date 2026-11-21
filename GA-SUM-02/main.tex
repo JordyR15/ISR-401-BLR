@@ -3,28 +3,56 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
+\usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,arrows.meta,positioning}
 \usepackage{booktabs}
 \usepackage{xcolor}
+\usepackage{url}
 
-\usetheme{default}
+% ============ ESTILO Y PALETA INSTITUCIONAL ============
+\usetheme{Madrid}
+\definecolor{uteqverde}{RGB}{0, 102, 51}
+\definecolor{uteqoscuro}{RGB}{0, 66, 33}
+\definecolor{uteqclaro}{RGB}{235, 245, 238}
+\definecolor{uteqacento}{RGB}{212, 160, 23}
+
+\setbeamercolor{palette primary}{bg=uteqverde, fg=white}
+\setbeamercolor{palette secondary}{bg=uteqoscuro, fg=white}
+\setbeamercolor{palette tertiary}{bg=uteqoscuro, fg=white}
+\setbeamercolor{palette quaternary}{bg=uteqverde, fg=white}
+\setbeamercolor{structure}{fg=uteqverde}
+\setbeamercolor{frametitle}{bg=uteqclaro, fg=uteqoscuro}
+\setbeamercolor{title}{bg=uteqverde, fg=white}
+\setbeamercolor{block title}{bg=uteqverde, fg=white}
+\setbeamercolor{block body}{bg=uteqclaro!60, fg=black}
+\setbeamercolor{block title alerted}{bg=red!75!black, fg=white}
+\setbeamercolor{block body alerted}{bg=red!8, fg=black}
+\setbeamercolor{item}{fg=uteqverde}
+
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.4ex,dp=1ex,leftskip=1.2em,rightskip=1.2em]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+}
 
 % Marca visible para lo que falta. Antes de entregar no debe quedar ninguna:
 % buscar "Pendiente" en el PDF y en estos archivos.
 \newcommand{\pend}[1]{\textcolor{red}{[Pendiente: #1]}}
 
-\title{Técnicas de elicitación y herramientas automatizadas de apoyo a la IR}
+\titlegraphic{\includegraphics[height=1.65cm,keepaspectratio]{evidencias/imagen01}}
+\title[Elicitación y Herramientas de IR]{Técnicas de elicitación y herramientas automatizadas de apoyo a la IR}
 \subtitle{GA-SUM-02 -- EXP-1 \;|\; Ingeniería de Requerimientos (ISR-401)}
-\author{Basurto Anchaguano Jordan Steven \\ Lavayen Bone Cristopher Javier \\ Rivas Bodero Jordy Fabián}
-\institute{Universidad Técnica Estatal de Quevedo -- Carrera de Software}
-\date{}
+\author[Basurto, Lavayen \& Rivas]{Basurto Anchaguano Jordan Steven \\ Lavayen Bone Cristopher Javier \\ Rivas Bodero Jordy Fabián}
+\institute[UTEQ -- Software]{Universidad Técnica Estatal de Quevedo -- Carrera de Software}
+\date{Noviembre 2026}
 
 \begin{document}
 
-\begin{frame}
+\begin{frame}[plain]
   \titlepage
 \end{frame}
 
@@ -40,8 +68,21 @@
 
 % ============ DECLARACIÓN DE USO DE IA ============
 \begin{frame}{Declaración de uso de herramientas de IA}
-  % Obligatoria. Si no se usó ninguna, escribirlo así.
-  \textcolor{red}{[Pendiente por llenar]}
+  \small
+  \begin{block}{Herramienta utilizada}
+    \textbf{Google Gemini} (modelo de lenguaje generativo), empleada exclusivamente como apoyo metodológico y técnico bajo supervisión y validación del equipo.
+  \end{block}
+
+  \vspace{4pt}
+  \textbf{Justificación y alcance del uso:}
+  \begin{itemize}
+    \item \textbf{División de tareas y creación de bloques:} organización equitativa de la carga de trabajo entre los tres integrantes y modularización del contenido en archivos independientes (\texttt{bloqueA}, \texttt{bloqueB} y \texttt{bloqueCD}).
+    \item \textbf{Estructura y estilo de las diapositivas:} diseño del esquema visual, distribución de columnas, síntesis de puntos clave y depuración de código en \LaTeX/Beamer.
+    \item \textbf{Investigación sobre la interfaz:} exploración inicial de las vistas funcionales, módulos de gestión y flujo de trazabilidad de Helix ALM (Perforce ALM).
+  \end{itemize}
+
+  \vspace{4pt}
+  \footnotesize\textit{Nota:} Todo el contenido técnico, el análisis comparativo, las evidencias y las citas bibliográficas en formato IEEE fueron verificados y adaptados por los autores.
 \end{frame}
 
 % ============ REFERENCIAS (IEEE, última diapositiva) ============
